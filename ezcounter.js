@@ -24,7 +24,8 @@ let EZCounter = {
                 outputElem.style.height = "10%";
                 outputElem.style.border = "1px solid #aaa";
                 outputElem.className = "EZOutput";
-                outputElem.textContent = "Words:";
+                outputElem.textContent = "Words: ";
+                outputElem.style.userSelect = "none";
                 const tempSpan = document.createElement("span");
                 tempSpan.style.paddingRight = "5%";
                 tempSpan.style.paddingLeft = "1%";
@@ -34,7 +35,18 @@ let EZCounter = {
     
     
     
-       
+        setInterval(()=>{
+            const textArea = document.querySelectorAll(".EZCounter  textarea");
+          textArea.forEach((area)=>{
+            if(area == document.activeElement){
+                area.parentElement.querySelector(".EZOutput").style.padding = "0 1px 0 1px";
+                area.parentElement.querySelector(".EZOutput").style.transform = "translateX(-1px)";
+            } else {
+                area.parentElement.querySelector(".EZOutput").style.padding = "0";
+                area.parentElement.querySelector(".EZOutput").style.transform = "none";
+            }
+          })  
+        },10);
    
 
     },
@@ -46,8 +58,8 @@ let EZCounter = {
             let currentText = textAreas[i].value;
 
             let  wordCount = 0;
-            if(/[a-z0-9]{1,}[.]*/gi.test(currentText)){
-                wordCount = currentText.match(/[a-z0-9]{1,}[.]*/gi).length;
+            if(/[a-z0-9]{1,}/gi.test(currentText)){
+                wordCount = currentText.match(/[a-z0-9]{1,}/gi).length;
             }
             
             textAreas[i].parentElement.querySelector(".EZOutput span").textContent = wordCount;
