@@ -18,7 +18,13 @@ body{
 .EZCounter{
     width:70%;
     aspect-ratio: 1/0.5;
+    font-size: 25px;
 }
+
+.EZCounter textarea {
+    font-size: 20px;   
+}
+
 #output{
     text-align: center;
 }
