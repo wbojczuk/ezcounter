@@ -23,7 +23,6 @@ let EZCounter = {
                 outputElem.style.width= "100%";
                 outputElem.style.height = "10%";
                 outputElem.style.border = "1px solid #aaa";
-		outputElem.style.fontSize = "25px";
                 outputElem.className = "EZOutput";
                 outputElem.textContent = "Words: ";
                 outputElem.style.userSelect = "none";
