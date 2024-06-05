@@ -59,7 +59,7 @@ let EZCounter = {
 
             let  wordCount = 0;
             if(/[a-z0-9]{1,}/gi.test(currentText)){
-                wordCount = currentText.match(/[a-z0-9]{1,}/gi).length;
+                wordCount = currentText.match(/[a-z0-9\-]{1,}/gi).length;
             }
             
             textAreas[i].parentElement.querySelector(".EZOutput span").textContent = wordCount;
